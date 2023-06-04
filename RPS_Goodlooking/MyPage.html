@@ -66,44 +66,7 @@
     }
 </script>
 
-<!--    Payoff Matrix:
-
-    <table align="center" style="text-align:center;">
-        <tr> <!-- Entirety of Row 1 and Column 1->
-            <th rowspan="5"> Player 1</th>
-            <th colspan="4"> Player 2</th>
-        </tr>
-
-        <tr> <!-- Choice elaboration ->
-            <td></td>
-            <td>Rock</td>
-            <td>Paper</td>
-            <td>Scissors</td>
-        </tr>
-
-        <tr>
-            <td>Rock</td>
-            <td>{{ C.PAYOFF_DRAW }}, {{ C.PAYOFF_DRAW }}</td>
-            <td>{{ C.PAYOFF_WIN }}, {{ C.PAYOFF_LOSE }}</td>
-            <td>{{ C.PAYOFF_LOSE }}, {{ C.PAYOFF_WIN }}</td>
-        </tr>
-
-        <tr>
-            <td>Paper</td>
-            <td>{{ C.PAYOFF_WIN }}, {{ C.PAYOFF_LOSE }}</td>
-            <td>{{ C.PAYOFF_DRAW }}, {{ C.PAYOFF_DRAW }}</td>
-            <td>{{ C.PAYOFF_LOSE }}, {{ C.PAYOFF_WIN }}</td>
-        </tr>
-
-        <tr>
-            <td>Scissors</td>
-            <td>{{ C.PAYOFF_LOSE }}, {{ C.PAYOFF_WIN }}</td>
-            <td>{{ C.PAYOFF_WIN }}, {{ C.PAYOFF_LOSE }}</td>
-            <td>{{ C.PAYOFF_DRAW }}, {{ C.PAYOFF_DRAW }}</td>
-        </tr>
-    </table>
-
-    {{ form.choice.label }} -->
+    {{ form.choice.label }}
     <form method="post">
         <input id="playerChoice" type="hidden" name="choice">
 

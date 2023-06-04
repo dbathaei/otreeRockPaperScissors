@@ -40,6 +40,14 @@ class Player(BasePlayer):
 
 
 # PAGES
+class Intro(Page):
+    @staticmethod
+    def is_displayed(player: Player):
+        if player.round_number == 1:
+            return True
+        else:
+            return False
+    
 class MyPage(Page):
     timeout_seconds = 10
     form_model = "player"
@@ -113,4 +121,4 @@ class LastRoundPage(Page):
             return False
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results, LastRoundPage]
+page_sequence = [Intro, MyPage, ResultsWaitPage, Results, LastRoundPage]
