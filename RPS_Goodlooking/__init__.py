@@ -10,7 +10,7 @@ Your app description
 class C(BaseConstants):
     NAME_IN_URL = 'RPS_Goodlooking'
     PLAYERS_PER_GROUP = None
-    NUM_ROUNDS = 2 #random.randint(10,24)
+    NUM_ROUNDS = random.randint(10,24)
     PAYOFF_WIN = 1
     PAYOFF_DRAW = 0
     PAYOFF_LOSE = -1
