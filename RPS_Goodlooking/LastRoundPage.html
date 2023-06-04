@@ -1,0 +1,23 @@
+{{ block title }}
+    <div class="center">This was all for nothing.</div>
+{{ endblock }}
+
+
+{{ block content }}
+<style>
+        .center {
+            width: 100%;
+            text-align: center;
+        }
+</style>
+
+<p>
+    Truth of the matter is, the game's judge is an emotional creature. Sometimes, they feel bad for the losing side, and decide
+    to give them the final prize instead of the winner.
+    {{ if player.payoff == 100 }}
+        In this case, the judge decided that you won. Congratulations on one hundred thousand dollars!!!
+    {{ else }}
+        In this case, the judge decided that you lost. Sorry bud, tough luck.
+    {{ endif }}
+</p>
+{{ endblock }}

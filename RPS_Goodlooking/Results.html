@@ -1,0 +1,72 @@
+{{ block title }}
+    <div class="center">WhoWonnIt?</div>
+{{ endblock }}
+
+{{ block content }}
+<style>
+        button {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            touch-action: manipulation;
+        }
+
+        button:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05);
+        }
+
+        .center {
+            width: 100%;
+            text-align: center;
+        }
+
+        .resultbox {
+            font-size: 1.2rem;
+            width: 60%;
+            height: auto;
+            text-align: center;
+            padding: 50px;
+            border: 4px solid rgb(165, 215, 193);
+            border-radius: 100px;
+
+
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 20px;
+        }
+</style>
+    <div class="resultbox">
+        {{ if player.payoff == 1 }}
+            <p>
+                You won this round! Careful though, you don't know if you wanna keep winning.
+            </p>
+        {{ elif player.payoff == -1 }}
+            <p>
+                You lost this round... Don't sweat it, your chance of winning is still 50/50.
+            </p>
+        {{ else }}
+            <p>
+                Both chose {{ player.choice }}, it's a draw.
+            </p>
+        {{ endif }}
+    </div>
+
+    {{ if player.round_number == 5 }}
+        {{ if C.FINAL_DECISION_VALUE == 2 }}
+        <p>psst: you're gonna win.</p>
+        {{ endif }}
+    {{ endif }}
+    <div class="center"><button>Let's keep going</button></div>
+{{ endblock }}
+
+
